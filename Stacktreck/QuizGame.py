@@ -28,19 +28,19 @@ questions = {
     },
     7: {
         "question": "Are used to store multiple values in one single variable that can be altered",
-        "answer": "arrays"
+        "answer": "Arrays"
     },
     8: {
         "question": "Are used to store multiple values in one single variable but are immutable",
-        "answer": "tuple"
+        "answer": "Tuple"
     },
     9: {
         "question": "Are used to store data values in key:value pairs",
-        "answer": "dictionary"
+        "answer": "Dictionary"
     },
     10: {
         "question": " ________ is an interpreted, interactive, object-oriented programming language. It incorporates modules, exceptions, dynamic typing, very high level dynamic data types, and classes",
-        "answer": "python"
+        "answer": "Python"
     }
 }
 
@@ -63,7 +63,7 @@ for question in random_questions:
         score += 1
         print("Correct!")
     else:
-        print("Wrong answer!")
+        print(f"Wrong answer! Answer is {questions[question]['answer']}")
     print(f"You got {score} out of {len(questions)}\n")
 
 if score >= 5:
