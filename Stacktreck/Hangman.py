@@ -113,10 +113,10 @@ while start_game:
             if len(guess) == 1:
                 if guess in correct_word.upper():
                     guessed_letters.append(guess)
-                    print_message = 'Nice! ' + str(guess) + ' is in the word.'
+                    print_message = str(guess) + ' is in the word.'
                 else:
                     lives -= 1
-                    print_message = 'Uh oh! ' + str(guess) + ' is not in the word.'
+                    print_message = str(guess) + ' is not in the word.'
             else:
                 if guess == correct_word.upper():
                     guessed_answer = True
@@ -138,7 +138,5 @@ while start_game:
         if (end_game.lower() == 'n' or end_game.lower() == 'y'):
             if (end_game.lower() == 'n'):
                 start_game = False
-                break
+                os._exit(1)
             end_question = False
-
-    ### TODO: TIMER
