@@ -41,8 +41,9 @@ def scene1():
 def searchenemy():
     global enemy
     enemy = random.choice(enemy_mon)
-    time.sleep(2)
+    time.sleep(3)
     print(f"\n{enemy} appeared!\n")
+    time.sleep(1)
     fight()
 
 def fight():
@@ -73,41 +74,57 @@ def fight():
                 correct_answer = True
                 if (act.lower() == "attack"):
                     print(f"You attacked the enemy! You dealt {mad} damage")
+                    time.sleep(1)
                     ehp -= mad
                 elif (act.lower() == "skill"):
-                    print(f"You used skill! You dealt {mskill} damage")
+                    print(f"You used skill!")
+                    time.sleep(1)
+                    print("WOOOOOSH!")
+                    time.sleep(1)
+                    print(f"You dealt {mskill} damage")
                     ehp -= mskill
                 elif (act.lower() == "run"):
                     if (selected_mon == "Galemon"):
                         print("You escaped successfully!")
+                        time.sleep(1)
                         return
                     else:
                         print("You tried to run but cannot escape! (If only you have Galemon)")
+                        time.sleep(1)
                 
                 if (ehp > 0):
                     print(f"Enemy hp left: {ehp}")
+                    time.sleep(1)
                     eaction = random.randrange(0,3)
                     if (eaction == 3):
-                        print(f"Enemy used skill! You received {eskill} damage")
+                        print(f"Enemy used skill!")
+                        time.sleep(1)
+                        print(f"GRAAAAH!")
+                        time.sleep(1)
+                        print(f" You received {eskill} damage")
                         mhp -= eskill
                     else:
                         print(f"Enemy attacked you! You received {ead} damage")
+                        time.sleep(1)
                         mhp -= ead
                 else:
+                    time.sleep(1)
                     print("Enemy is dead")
 
                 if (mhp > 0):
                     print(f"{selected_mon} hp left: {mhp}")
                     if (ehp <= 0):
+                        time.sleep(1)
                         print(f"{selected_mon} received 5 experience points!")
                 else:
+                    time.sleep(1)
                     print(f"{selected_mon} died. You went to the hospital")
 
         if (correct_answer == False):
             print("Enemy is laughing at you. What are you doing?")
 
 
-        time.sleep(2)
+        time.sleep(1)
             
 
 intro()
